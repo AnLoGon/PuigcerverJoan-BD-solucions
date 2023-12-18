@@ -1,0 +1,97 @@
+judge: sql
+name: musica
+package: musica/queries/basic
+
+init:
+  - file: ../schema/create_schema_musica.sql
+  - file: ../data/insert_data_musica.sql
+exercises:
+  query_01:
+    statement: |
+      Quants àlbums hi han a la base de dades?
+    output: |
+      +--------+
+      | albums |
+      +--------+
+      |     18 |
+      +--------+
+  query_02:
+    statement: |
+      Mostra els noms dels grups que no espanyols, ordenats alfabèticament.
+    output: |
+      +----------------------+
+      | nom                  |
+      +----------------------+
+      | Genesis              |
+      | Mike + The Mechanics |
+      | Simple Minds         |
+      | U2                   |
+      +----------------------+
+  query_03:
+    statement: |
+      Mostra el títol de les cançons que duren més de 5 minuts.
+    output: |
+      +---------------+
+      | titol         |
+      +---------------+
+      | 7 Deadly Sins |
+      | Lemon         |
+      | So Cruel      |
+      | Zooropa       |
+      +---------------+
+  query_04:
+    statement: |
+      Obté els diferents rols que tenen els artistes en els grups.
+    output: |
+      +----------------+
+      | rol            |
+      +----------------+
+      | baix elèctric  |
+      | bateria        |
+      | guitarra       |
+      | teclat         |
+      | veu            |
+      +----------------+
+  query_05:
+    statement: |
+      Obté el nom i el nombre de membres dels clubs de fans.
+      Els resultats estan ordenats ascendentment pel nombre de membres.
+    output: |
+      +-------------------+----------------+
+      | nom               | nombre_membres |
+      +-------------------+----------------+
+      | FanMike           |             11 |
+      | Implicado         |             25 |
+      | Bonoculture       |            129 |
+      | Waterfront        |            234 |
+      | Presuntos         |            237 |
+      | Ché U2            |            239 |
+      | Los Culpables     |            355 |
+      | Jardín Botánico   |            357 |
+      | Troglominds       |            999 |
+      | The best mind     |           1413 |
+      | u2foryou          |           1700 |
+      | Mentes Fuertes    |           1984 |
+      | Zoomanía          |           2508 |
+      | Machines          |           7789 |
+      | Futuristas        |           9850 |
+      | Fanaticgens       |          12002 |
+      | Genefans          |          23412 |
+      +-------------------+----------------+
+  query_06:
+    statement: |
+      Mostra el nom i la direcció dels clubs de fans amb més de 500 membres.
+    output: |
+      +----------------+----------------------+
+      | nom            | direccio             |
+      +----------------+----------------------+
+      | Fanaticgens    | Av. H. Dominicos 155 |
+      | Futuristas     | C/Alboraya 10        |
+      | Genefans       | C/Visitación 34      |
+      | Machines       | Calle 3, Lab 3       |
+      | Mentes Fuertes | Ramón y Cajal 14     |
+      | The best mind  | 24, Homeround        |
+      | Troglominds    | C/Lepe 22            |
+      | u2foryou       | 23, 11th Street      |
+      | Zoomanía       | 33, Abbey Road       |
+      +----------------+----------------------+

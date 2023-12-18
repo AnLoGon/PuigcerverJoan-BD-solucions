@@ -1,0 +1,25 @@
+judge: sql
+name: musica
+package: musica/queries/subqueries
+
+init:
+  - file: ../schema/create_schema_musica.sql
+  - file: ../data/insert_data_musica.sql
+exercises:
+  query_01:
+    statement: |
+      Mostra el nom dels àlbums gravats per el grup músical més antic.
+    output: |
+  query_02:
+    statement: |
+      Obté el nombre d'àlbums que han segut gravats per un grup musical que té un club de fans amb
+      més de 5.000 membres.
+    output: |
+  query_03:
+    statement: |
+      Mostra el nom i el nombre de membres dels clubs de fans amb més fans.
+    output: |
+  query_04:
+    statement: |
+      Mostra el títol la duració del les cançons més llargues.
+    output: |

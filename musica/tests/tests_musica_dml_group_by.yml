@@ -1,0 +1,23 @@
+judge: sql
+name: musica
+package: musica/queries/group_by
+init:
+  - file: ../schema/create_schema_musica.sql
+  - file: ../data/insert_data_musica.sql
+exercises:
+  query_01:
+    statement: |
+      Obté els noms dels grups de música espanyol i el nombre total de membres dels seus clubs de fans.
+    output: |
+  query_02:
+    statement: |
+      Obté el nom i el nombre de components dels grups de música que tenen més de 2 membres.
+    output: |
+  query_03:
+    statement: |
+      Obté el nombre d'àlbums de cada grup musical.
+    output: |
+  query_04:
+    statement: |
+      Obté el nombre de cançons gravades per cada companyia productora, així com la seua direcció.
+    output: |

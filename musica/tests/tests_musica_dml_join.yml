@@ -1,0 +1,101 @@
+judge: sql
+name: musica
+package: musica/queries/join
+
+init:
+  - file: ../schema/create_schema_musica.sql
+  - file: ../data/insert_data_musica.sql
+exercises:
+  query_01:
+    statement: |
+      Obté el nom i la direcció dels clubs de fans de grups espanyols.
+      Mostra el nom del grup del qual són fans.
+    output: |
+      +-------------------+-----------------------+----------------------+
+      | club_fans         | direccio              | grup_musical         |
+      +-------------------+-----------------------+----------------------+
+      | Futuristas        | C/Alboraya 10         | Radio Futura         |
+      | Implicado         | Torrejón de Ardoz 12  | Presuntos Implicados |
+      | Jardín Botánico   | 203,Valencia 46004    | Radio Futura         |
+      | Los Culpables     | C/Maria Cristina 67   | Presuntos Implicados |
+      | Presuntos         | C/Albacete 12, bajo   | Presuntos Implicados |
+      +-------------------+-----------------------+----------------------+
+  query_02:
+    statement: |
+      Mostra el nom dels artistes que pertanyen a un grup de música espanyol.
+    output: |
+      +-------------------+
+      | nom               |
+      +-------------------+
+      | Carlos Torero     |
+      | Enrique Sierra    |
+      | J.L. Giménez      |
+      | Luis Auserón      |
+      | Nacho Maño        |
+      | Santiago Auserón  |
+      | Soledad Giménez   |
+      +-------------------+
+  query_03:
+    statement: |
+      Mostra el títol dels àlbums que contenen una cançó que és més llarga de 5 minuts.
+    output: |
+      +----------------------+
+      | nom                  |
+      +----------------------+
+      | Achtung baby         |
+      | Good news F.N. world |
+      | Zooropa              |
+      +----------------------+
+
+  query_04:
+    statement: |
+      Obté el títol de les cançons que tenen el mateix títol
+      que el àlbum al qual pertanyen.
+    output: |
+      +----------------------+
+      | titol                |
+      +----------------------+
+      | Alma de blues        |
+      | De sol a sol         |
+      | Invisible touch      |
+      | Living years         |
+      | October              |
+      | Once Upon A Time     |
+      | Ser de agua          |
+      | The unforgettable fi |
+      | Word of mouth        |
+      | Zooropa              |
+      +----------------------+
+
+  query_05:
+    statement: |
+      Mostra el nom i la direcció de les companyies productores que han gravat
+      un àlbum el qual el seu nom comença per 'A'.
+    output: |
+      +--------+------------+
+      | nom    | direccio   |
+      +--------+------------+
+      | Island | 67, JB St. |
+      | WEA    | L Hoyos 42 |
+      +--------+------------+
+
+  query_06:
+    statement: |
+      Mostra el títol de les cançons de grups espanyols amb una duració de 4 minuts.
+    output: |
+      +-------------------+
+      | titol             |
+      +-------------------+
+      | 37 grados         |
+      | Al atardecer      |
+      | Alma de blues     |
+      | Barbara del campo |
+      | De sol a sol      |
+      | Encadenada        |
+      | La ley            |
+      | Río Po            |
+      | Sed de amor       |
+      | Semilla negra     |
+      | Sentir tu calor   |
+      | Tormenta de arena |
+      +-------------------+
