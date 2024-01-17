@@ -1,0 +1,106 @@
+judge: sql
+name: ciclisme
+database: ciclisme
+package: ciclisme/queries/subqueries
+date: "2022-03-06 23:59:00"
+tag: PracticeSubqueriesGroupBy
+
+init:
+  - file: ../schema/create_schema_ciclisme.sql
+  - file: ../data/insert_data_ciclisme.sql
+exercises:
+  query_01:
+    statement: |
+      Obté l'etapa i la ciutat d'inici de ls etapes que
+      no tenen cap port de muntanya.
+    output: |
+      +-------+------------------+
+      | etapa | inici            |
+      +-------+------------------+
+      |     1 | Valladolid       |
+      |     3 | Salamanca        |
+      |     4 | Almendralejo     |
+      |     5 | Córdoba          |
+      |     6 | Granada          |
+      |     7 | Baza             |
+      |     8 | Benidorm         |
+      |     9 | Benidorm         |
+      |    12 | Benasque         |
+      |    13 | Zaragoza         |
+      |    14 | Pamplona         |
+      |    17 | Cangas de Onís   |
+      |    20 | Segovia          |
+      |    21 | Destilerías Dyc  |
+      +-------+------------------+
+
+  query_02:
+    statement: |
+      Obté l'edat mitjana dels ciclistes que han guanyat una etapa.
+    output: |
+      +--------------+
+      | edat_mitjana |
+      +--------------+
+      |      30.5625 |
+      +--------------+
+
+  query_03:
+    statement: |
+      Mostra el nom dels ports de muntanya amb una altura major
+      que l'altura mitjana de tots els ports.
+    output: |
+      +------------------------+
+      | nom                    |
+      +------------------------+
+      | Arcalís                |
+      | Cerler-Circo de Ampriu |
+      | Coll de Ordino         |
+      | Cruz de la Demanda     |
+      | Navacerrada            |
+      | Puerto de la Morcuera  |
+      | Sierra Nevada          |
+      +------------------------+
+
+
+  query_04:
+    statement: |
+      Obté la ciutat d'inici i final deles etapes que tenen
+      el port de muntanya més pronunciat (amb més pendent).
+    output: |
+      +----------+---------+
+      | inici    | final   |
+      +----------+---------+
+      | Igualada | Andorra |
+      +----------+---------+
+
+  query_05:
+    statement: |
+      Obté el dorsal i el nom dels cicliste que han guanyat
+      el port de muntanya més alt.
+    output: |
+      +--------+-------------------+
+      | dorsal | nom               |
+      +--------+-------------------+
+      |      9 | Massimo Podenzana |
+      |     26 | Mikel Zarrabeitia |
+      +--------+-------------------+
+
+  query_06:
+    statement: |
+      Obté el nom del ciclista més jove.
+    output: |
+      +---------------+
+      | nom           |
+      +---------------+
+      | Eugeni Berzin |
+      +---------------+
+
+
+  query_07:
+    statement: |
+      Obté el nom del ciclista més jove que ha guanyat almenys una etapa.
+    output: |
+      +------------------+
+      | nom              |
+      +------------------+
+      | Vladislav Bobrik |
+      +------------------+

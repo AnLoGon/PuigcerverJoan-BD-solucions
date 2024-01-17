@@ -1,0 +1,156 @@
+judge: sql
+name: ciclisme
+database: ciclisme
+package: ciclisme/queries/join
+date: "2022-02-20 23:59:00"
+tag: PracticeBasicJoin
+
+init:
+  - file: ../schema/create_schema_ciclisme.sql
+  - file: ../data/insert_data_ciclisme.sql
+exercises:
+  query_01:
+    statement: |
+      Obté el nom i la categoria dels ports de muntanya que han guanyat ciclistes de
+      l'equip 'Banesto'.
+    output: |
+      +-----------------------+-----------+
+      | nom                   | categoria |
+      +-----------------------+-----------+
+      | Alto del Naranco      | 1         |
+      | Coll de la Comella    | 1         |
+      | Navacerrada           | 1         |
+      | Puerto de Alisas      | 1         |
+      | Puerto de la Morcuera | 2         |
+      | Puerto de Navalmoral  | 2         |
+      | Sierra Nevada         | E         |
+      +-----------------------+-----------+
+
+  query_02:
+    statement: |
+      Obté el nom dels ports de muntanya i indica a quina etapa pertanyen
+      i els quilòmetres d'aquesta.
+    output: |
+      +--------------------------+-------+-----+
+      | nom                      | etapa | km  |
+      +--------------------------+-------+-----+
+      | Alto del Naranco         |    10 | 200 |
+      | Arcalís                  |    10 | 200 |
+      | Cerler-Circo de Ampriu   |    11 | 195 |
+      | Coll de la Comella       |    10 | 200 |
+      | Coll de Ordino           |    10 | 200 |
+      | Cruz de la Demanda       |    11 | 195 |
+      | Lagos de Covadonga       |    16 | 160 |
+      | Navacerrada              |    19 | 190 |
+      | Puerto de Alisas         |    15 | 207 |
+      | Puerto de la Morcuera    |    19 | 190 |
+      | Puerto de Mijares        |    18 | 195 |
+      | Puerto de Navalmoral     |    18 | 195 |
+      | Puerto de Pedro Bernardo |    18 | 195 |
+      | Sierra Nevada            |     2 | 180 |
+      +--------------------------+-------+-----+
+
+  query_03:
+    statement: |
+      Obté el nom i l'entrenador dels equips que tenen almenys un ciclista major de 33 anys d'edat.
+    output: |
+      +-----------------+--------------------+
+      | nom             | entrenador         |
+      +-----------------+--------------------+
+      | Amore Vita      | Ricardo Padacci    |
+      | Banesto         | Miguel Echevarría  |
+      | Bresciali-Refin | Pietro Armani      |
+      | Carrera         | Luigi Petroni      |
+      | Gatorade        | Gian Luca Pacceli  |
+      | Kelme           | Álvaro Pino        |
+      | Mapei-Clas      | Juan Fernández     |
+      | Navigare        | Lonrenzo Sciacci   |
+      | Telecom         | Morgan Reikcard    |
+      | TVM             | Steveens Henk      |
+      +-----------------+--------------------+
+
+  query_04:
+    statement: |
+      Obté el nom dels ciclistes amb els colors dels mallots que han portat.
+    output: |
+      +----------------------+---------------------+
+      | nom_ciclista         | color_mallot        |
+      +----------------------+---------------------+
+      | Alessio Di Basco     | Rosa                |
+      | Alex Zulle           | Groc                |
+      | Alfonso Gutiérrez    | Roig                |
+      | Alfonso Gutiérrez    | Verd                |
+      | Armand de las Cuevas | Estrelletes morades |
+      | Bruno Leali          | Roig                |
+      | Claudio Chiappucci   | Blanc i roig        |
+      | Davide Cassani       | Roig                |
+      | Dimitri Konishev     | Roig                |
+      | Eddy Seigneur        | Estrelletes morades |
+      | Gianni Bugno         | Blanc i roig        |
+      | Giorgio Furlan       | Rosa                |
+      | Jean Van Poppel      | Rosa                |
+      | Jesús Montoya        | Blanc i roig        |
+      | Laurent Jalabert     | Verd                |
+      | Marco Saligari       | Roig                |
+      | Mario Cipollini      | Rosa                |
+      | Melchor Mauri        | Blanc i roig        |
+      | Melchor Mauri        | Groc                |
+      | Miguel Indurain      | Blanc i roig        |
+      | Miguel Indurain      | Groc                |
+      | Miguel Indurain      | Roig                |
+      | Miguel Indurain      | Rosa                |
+      | Miguel Indurain      | Verd                |
+      | Mikel Zarrabeitia    | Blanc i roig        |
+      | Mikel Zarrabeitia    | Groc                |
+      | Pedro Delgado        | Blanc i roig        |
+      | Pedro Delgado        | Groc                |
+      | Per Pedersen         | Rosa                |
+      | Stefano della Santa  | Roig                |
+      | Tony Rominger        | Groc                |
+      +----------------------+---------------------+
+
+  query_05:
+    statement: |
+      Obté el nom del ciclistes i la etapa en les quals el ciclista ha guanyat
+      la etapa i ha portat el mallot 'Groc' almenys una vegada (en qualsevol etapa).
+    output: |
+      +-----------------+-------+
+      | nom             | etapa |
+      +-----------------+-------+
+      | Miguel Indurain |     1 |
+      | Miguel Indurain |     8 |
+      | Pedro Delgado   |    10 |
+      | Pedro Delgado   |    19 |
+      | Pedro Delgado   |    20 |
+      | Tony Rominger   |    17 |
+      +-----------------+-------+
+
+  query_06:
+    statement: |
+      Obté les etapes que no comencen en el mateix lloc on ha acabat l'etapa anterior (`id_etapa` està ordenat).
+    output: |
+      +----------+
+      | id_etapa |
+      +----------+
+      |        4 |
+      |        7 |
+      |        8 |
+      |       10 |
+      |       12 |
+      |       15 |
+      |       17 |
+      |       18 |
+      |       20 |
+      +----------+
+
+  query_07:
+    statement: |
+      Obté el nom del ciclista i l'etapa on el ciclista ha guanyat i ha portat
+      el mallor 'Groc' en aquesta etapa.
+    output: |
+      +-----------------+-------+
+      | nom             | etapa |
+      +-----------------+-------+
+      | Miguel Indurain |     1 |
+      +-----------------+-------+
+

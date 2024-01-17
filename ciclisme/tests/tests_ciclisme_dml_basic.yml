@@ -1,0 +1,117 @@
+judge: sql
+name: ciclisme
+  # database: ciclisme
+package: ciclisme/queries/basic
+date: "2022-02-20 23:59:00"
+tag: PracticeBasicJoin
+
+init:
+  - file: ../schema/create_schema_ciclisme.sql
+  - file: ../data/insert_data_ciclisme.sql
+exercises:
+  query_01:
+    statement: |
+      Obté el codi, el tipus, el color i el premi de tots els mallots.
+    output: |
+      +-----------+-------------------+---------------------+---------+
+      | id_mallot | tipus             | color               | premi   |
+      +-----------+-------------------+---------------------+---------+
+      | MGE       | General           | Groc                | 8000000 |
+      | MMO       | Muntanya          | Blanc i roig        | 2000000 |
+      | MMS       | Més patit         | Estrelletes morades | 2000000 |
+      | MMV       | Metes volants     | Roig                | 2000000 |
+      | MRE       | Regularitat       | Verd                | 2000000 |
+      | MSE       | Sprints especials | Rosa                | 2000000 |
+      +-----------+-------------------+---------------------+---------+
+
+  query_02:
+    statement: |
+      Obté el dorsal i el nom dels ciclistes amb 25 anys o menys d'edat.
+    output: |
+      +--------+-------------------+
+      | dorsal | nom               |
+      +--------+-------------------+
+      |     38 | Javier Palacín    |
+      |     41 | Rolf Aldag        |
+      |     46 | Agustín Sagasti   |
+      |     49 | Eugeni Berzin     |
+      |     66 | Enrico Zaina      |
+      |     98 | Eleuterio Anguita |
+      +--------+-------------------+
+
+  query_03:
+    statement: |
+      Obté el nom i l'altura de tots els ports de muntanya amb categoria 'E' (especial).
+    output: |
+      +------------------------+--------+
+      | nom                    | altura |
+      +------------------------+--------+
+      | Arcalís                |   2230 |
+      | Cerler-Circo de Ampriu |   2500 |
+      | Coll de Ordino         |   1980 |
+      | Cruz de la Demanda     |   1850 |
+      | Lagos de Covadonga     |   1134 |
+      | Sierra Nevada          |   2500 |
+      +------------------------+--------+
+
+  query_04:
+    statement: |
+      Obté el codi de les etapes on l'inici i el final de l'etapa és la mateixa ciutat.
+    output: |
+      +----------+------------+------------+
+      | id_etapa | inici      | final      |
+      +----------+------------+------------+
+      |        1 | Valladolid | Valladolid |
+      |        8 | Benidorm   | Benidorm   |
+      |       18 | Ávila      | Ávila      |
+      +----------+------------+------------+
+
+  query_05:
+    statement: |
+      Quants ciclistes hi ha a la base de dades?
+    output: |
+      +------------------+
+      | nombre_ciclistes |
+      +------------------+
+      |              100 |
+      +------------------+
+
+  query_06:
+    statement: |
+      Quants ciclistes majors de 25 anys d'edat hi ha a la base de dades?
+    output: |
+      +-----------+
+      | majors_25 |
+      +-----------+
+      |        94 |
+      +-----------+
+
+  query_07:
+    statement: |
+      Quants equips hi ha?
+    output: |
+      +---------------+
+      | nombre_equips |
+      +---------------+
+      |            22 |
+      +---------------+
+
+  query_08:
+    statement: |
+      Obté l'edat mitjana de tots els ciclistes.
+    output: |
+      +--------------+
+      | edat_mitjana |
+      +--------------+
+      |      29.8900 |
+      +--------------+
+
+  query_09:
+    statement: |
+      Obté l'altura mínima i màxima de tots els ports de muntanya.
+    output: |
+      +---------------+---------------+
+      | altura_minima | altura_maxima |
+      +---------------+---------------+
+      |           565 |          2500 |
+      +---------------+---------------+

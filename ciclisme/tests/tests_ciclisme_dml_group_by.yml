@@ -1,0 +1,161 @@
+judge: sql
+name: ciclisme
+database: ciclisme
+package: ciclisme/queries/group_by
+date: "2022-03-06 23:59:00"
+tag: PracticeSubqueriesGroupBy
+
+init:
+  - file: ../schema/create_schema_ciclisme.sql
+  - file: ../data/insert_data_ciclisme.sql
+exercises:
+  query_01:
+    statement: |
+      Obté les etapes que tenen algun port de muntanya i
+      el nombre de ports de muntanya que té cadascuna.
+    output: |
+      +-------+----------------+
+      | etapa | ports_muntanya |
+      +-------+----------------+
+      |     2 |              1 |
+      |    10 |              4 |
+      |    11 |              2 |
+      |    15 |              1 |
+      |    16 |              1 |
+      |    18 |              3 |
+      |    19 |              2 |
+      +-------+----------------+
+
+  query_02:
+    statement: |
+      Obté el nom dels equips que tenen cicislistes i indica el nombre
+      de ciclistes que pertanyen al equip.
+    output: |
+      +-----------------+-----------+
+      | equip           | ciclistes |
+      +-----------------+-----------+
+      | Amore Vita      |         3 |
+      | Artiach         |         7 |
+      | Banesto         |        11 |
+      | Bresciali-Refin |         4 |
+      | Carrera         |         3 |
+      | Castorama       |         2 |
+      | Euskadi         |         2 |
+      | Gatorade        |         4 |
+      | Gewiss          |         8 |
+      | Jolly Club      |         2 |
+      | Kelme           |         7 |
+      | Lotus Festina   |         3 |
+      | Mapei-Clas      |         7 |
+      | Mercatone Uno   |         8 |
+      | Motorola        |         3 |
+      | Navigare        |         5 |
+      | ONCE            |         5 |
+      | Seguros Amaya   |         3 |
+      | Telecom         |         4 |
+      | TVM             |         6 |
+      | Wordperfect     |         3 |
+      +-----------------+-----------+
+
+  query_03:
+    statement: |
+      Obté el nom de tots els equips i indica el nombre
+      de ciclistes que pertanyen al equip.
+    output: |
+      +-----------------+-----------+
+      | equip           | ciclistes |
+      +-----------------+-----------+
+      | Amore Vita      |         3 |
+      | Artiach         |         7 |
+      | Banesto         |        11 |
+      | Bresciali-Refin |         4 |
+      | Carrera         |         3 |
+      | Castorama       |         2 |
+      | Euskadi         |         2 |
+      | Gatorade        |         4 |
+      | Gewiss          |         8 |
+      | Jolly Club      |         2 |
+      | Kelme           |         7 |
+      | Lotus Festina   |         3 |
+      | Mapei-Clas      |         7 |
+      | Mercatone Uno   |         8 |
+      | Motorola        |         3 |
+      | Navigare        |         5 |
+      | ONCE            |         5 |
+      | PDM             |         0 |
+      | Seguros Amaya   |         3 |
+      | Telecom         |         4 |
+      | TVM             |         6 |
+      | Wordperfect     |         3 |
+      +-----------------+-----------+
+
+  query_04:
+    statement: |
+      Obté el nom de l'equip i l'entrenador dels equips que
+      tenen més de 3 ciclistes i que l'edat_mitjana menor o igual a 30 anys.
+    output: |
+      +---------------+------------------+
+      | nom           | entrenador       |
+      +---------------+------------------+
+      | Artiach       | José Pérez       |
+      | Gewiss        | Moreno Argentin  |
+      | Mercatone Uno | Ettore Romano    |
+      | Navigare      | Lonrenzo Sciacci |
+      | ONCE          | Manuel Sainz     |
+      | Telecom       | Morgan Reikcard  |
+      +---------------+------------------+
+
+  query_05:
+    statement: |
+      Obté el nom dels ciclistes una o més etapes que pertanyen
+      a un equip que té més de 5 ciclistes. Indica quantes etapes
+      ha guanyat cada ciclista.
+    output: |
+      +-----------------------+------------------+
+      | nom                   | etapes_guanyades |
+      +-----------------------+------------------+
+      | Bo Hamburger          |                1 |
+      | Gert-Jan Theunisse    |                1 |
+      | Gian Matteo Fagnini   |                1 |
+      | Giorgio Furlan        |                1 |
+      | Hernán Buenahora      |                1 |
+      | Juan Martínez Oliver  |                1 |
+      | Mario Cipollini       |                1 |
+      | Miguel Indurain       |                2 |
+      | Pedro Delgado         |                3 |
+      | Tony Rominger         |                1 |
+      | Vladislav Bobrik      |                1 |
+      +-----------------------+------------------+
+
+  query_06:
+    statement: |
+      Obté el nom dels equips i l'edat mitjana dels ciclistes
+      dels equips que tenen l'edat mitjana més alta.
+    output: |
+      +------------+--------------+
+      | nom        | edat_mitjana |
+      +------------+--------------+
+      | Amore Vita |      32.0000 |
+      | Gatorade   |      32.0000 |
+      +------------+--------------+
+
+  query_07:
+    statement: |
+      Obté l'entrenador dels equips els ciclistes dels quals han portat
+      mallot (de qualsevol tipus) més vegades que la resta d'equips.
+    output: |
+      +--------------------+
+      | entrenador         |
+      +--------------------+
+      | Miguel Echevarría  |
+      +--------------------+
+
+  query_08:
+    statement: |
+      Obté el nom dels ciclistes que han guanyat més d'un port de muntanya.
+    output: |
+      +---------------+
+      | nom           |
+      +---------------+
+      | Pedro Delgado |
+      +---------------+
