@@ -107,7 +107,7 @@ exercises:
 
   query_05:
     statement: |
-      Obté el nom dels ciclistes una o més etapes que pertanyen
+      Obté el nom dels ciclistes que han guanyat una o més etapes que pertanyen
       a un equip que té més de 5 ciclistes. Indica quantes etapes
       ha guanyat cada ciclista.
     output: |

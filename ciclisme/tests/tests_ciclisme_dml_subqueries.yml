@@ -63,7 +63,7 @@ exercises:
 
   query_04:
     statement: |
-      Obté la ciutat d'inici i final deles etapes que tenen
+      Obté la ciutat d'inici i final de les etapes que tenen
       el port de muntanya més pronunciat (amb més pendent).
     output: |
       +----------+---------+

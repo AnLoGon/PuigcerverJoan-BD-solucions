@@ -1,6 +1,6 @@
 judge: sql
 name: ciclisme
-  # database: ciclisme
+database: ciclisme
 package: ciclisme/queries/basic
 date: "2022-02-20 23:59:00"
 tag: PracticeBasicJoin
